@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+button {
+  padding: 0.5em;
+  background-color: #F33;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+header {
+  background-color: #333;
+  color: red;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+header a {
+  color: white;
+}
+header h1 {
+  flex-grow: 1;
+}
+
+section {
+  padding: 1em;
+  margin-bottom: 1em;
+}
+section a {
+  color: #333;
+  text-decoration: none;
+}
+section:hover a {
+  text-decoration: underline;
+}
+section h2 {
+  margin: 0;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.post-create {
+  padding: 1em;
+  border: 1px solid #333;
+}
+.post-create input, .post-create textarea {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/*# sourceMappingURL=styles.css.map */

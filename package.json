@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "start": "concurrently \"bun --watch server.ts\" \"bun --watch build ./src/scripts.ts --outdir ./public\" \"sass --watch src:public\""
+  },
+  "dependencies": {
+    "@types/express": "^5.0.2",
+    "concurrently": "^9.1.2",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "sass": "^1.89.0",
+    "tsc": "^2.0.4"
+  },
+  "name": "lesson-07-bep-ejs-scss-ts",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
