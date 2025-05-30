@@ -8,6 +8,7 @@ button {
     color: white;
     border: none;
     cursor: pointer;
+    
 }
 
 header {
@@ -19,7 +20,9 @@ header {
     display: flex;
     align-items: center;
 
-    a { color: white; }
+    a { 
+        color: white;
+    }
 
     h1 {
         flex-grow: 1;

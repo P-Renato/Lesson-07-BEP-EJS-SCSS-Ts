@@ -6,7 +6,9 @@
     <%- include ('./partials/header.ejs') %>
     <h1>Welcome to our Bullet Board app</h1>
     
-
+        <section>
+            <h2><a href="/user">Create a new profile</a></h2>
+        </section>
     <% posts.forEach(post => { %>
         <section>
         <h2> <%= post.title %> </h2>
@@ -15,5 +17,6 @@
         
         </section>
     <% }) %>
+
 </body>
 </html>

@@ -1,7 +1,7 @@
-import type { FormReqBody } from "../types";
+import type { FormReqBody, UserReqBody } from "../types";
     
-    const form = document.querySelector('form');
-    form?.addEventListener('submit', (e)=>{
+    const postForm = document.querySelector('.postForm');
+    postForm?.addEventListener('submit', (e)=>{
         e.preventDefault();
 
         const body: FormReqBody = {
@@ -28,3 +28,26 @@ import type { FormReqBody } from "../types";
         });
     });
 
+
+        const userForm = document.querySelector('.userForm');
+        userForm?.addEventListener('submit',(e)=> {
+            e.preventDefault();
+
+
+            const body: UserReqBody = {
+                name: ((e.target as HTMLFormElement).elements.namedItem('name') as HTMLInputElement).value,
+                email: ((e.target as HTMLFormElement).elements.namedItem('email') as HTMLInputElement).value,
+                password: ((e.target as HTMLFormElement).elements.namedItem('password') as HTMLInputElement).value,
+            };
+            fetch('/api/user', { 
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body),
+        }).then(res => {
+            if(res.redirected){
+                location.replace(res.url);
+            }
+        });
+    });

@@ -5,17 +5,16 @@
    
     <%- include ('./partials/header') %>
 
-    single post page
-    <h1> <%= post.author %> </h1>
-    <h2> <%= post.title %> </h2>
-    <p> <%= post.content %> </p>
+    <h1> <%= user.name %> </h1>
+    <h2> <%= user.email %> </h2>
+    <p>Welcome, <%= user.name %> !</p>
     <a href="/post">Write a comment</a>
     <button id="deleteBtn">Delete</button>
     <script>
         document.getElementById('deleteBtn').addEventListener('click', async function() {
             if (!confirm('Are you sure you want to delete this post?')) return;
-            const postId = <%- JSON.stringify(post.id) %>;
-            const res = await fetch(`/post/${postId}`, { method: 'DELETE' });
+            const userId = <%- JSON.stringify(user.id) %>;
+            const res = await fetch(`/user/${userId}`, { method: 'DELETE' });
             if (res.ok) {
             window.location.href = '/';
             } else {
